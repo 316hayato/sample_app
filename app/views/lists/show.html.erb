@@ -7,11 +7,7 @@
 <p><%= @list.body %></p>
 
 <h2>画像</h2>
-<% if @list.image.attached? %>
   <%= image_tag @list.image, size: "300x300" %>
-<% else %>
-  <%= image_tag 'no_image', size: "300x300" %>
-<% end %>
 
 <%= link_to "編集", edit_list_path(@list.id) %>
 <!--data-confirmを用いて削除確認ダイアログも表示されるように設定-->
