@@ -14,3 +14,5 @@
 <% end %>
 
 <%= link_to "編集", edit_list_path(@list.id) %>
+<!--data-confirmを用いて削除確認ダイアログも表示されるように設定-->
+<%= link_to "削除", list_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
