@@ -6,11 +6,12 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params) # １.&2. データを受け取り新規登録するためのインスタンス作成
-
     if @list.save  # 3. データをデータベースに保存するためのsaveメソッド実行
       redirect_to list_path(@list.id) # 4. トップ画面へリダイレクト
     else
       render :new # render :アクション名で、同じコントローラ内の別アクションのViewを表示
+      # エラーメッセージを扱う際にはrender、それ以外はredirect_toを使う
+      # ちなみにrenderはビューファイルで書くときは[<%= render 'new' =>]とする
     end
   end
 
